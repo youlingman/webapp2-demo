@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block title %} manager - 首页 {% endblock %}  {# changing title #}
+
+{% block content %} {# adding main content #}
+<h1>欢迎！</h1>
+<div class="clearfix">
+<h2>所有游戏</h2>
+<div class="table-responsive">
+    <table class="table table-hover table-bordered table-striped">
+    <thead>
+        <tr>
+        <th>ID</th>
+        <th>游戏名</th>
+        </tr>
+    </thead>
+    {% for data in datas %}
+    <tbody>
+        <tr>
+        <td>{{ data.id }}</td>
+        <th><a href="/config/{{game.uid}}">{{ data.name.decode("utf8") }}</a></th>
+        </tr>
+    </tbody>
+    {% endfor %}
+    </table>
+</div>
+</div>
+{% endblock %}

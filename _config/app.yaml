@@ -1,0 +1,24 @@
+application: webapp2-demo
+access-control: private
+version: 1
+
+handlers:
+ - url: '/.*'
+   script: controller.py
+
+ - url: '/static/css'
+   static_dir: static/css
+
+ - url: '/static/js'
+   static_dir: static/js
+
+services:
+# - mysqldb
+# - memcache
+# - redis
+
+modules:
+- webapp2
+- jinja2
+- xml
+- lxml
